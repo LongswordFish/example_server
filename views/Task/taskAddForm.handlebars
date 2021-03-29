@@ -1,0 +1,33 @@
+    <h2>Add Task</h2>
+    
+    <form method="POST" action="/task/add">
+
+        <label>Title</label>
+        <input type="text" name="title" id="title"> <br><br>
+
+        <label>Description</label>
+        <textarea id="description" name="description"></textarea><br><br>
+
+        <label>Due Date</label>
+        <input type="date" name="dueDate" id="dueDate"> <br><br>
+
+        <label>Priority</label>
+        <select name="priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+        <br><br>
+
+        <label>Status</label> : Open
+       <!-- <select name="status">
+            <option value="open">Open</option>
+            <option value="hold">On Hold</option>
+            <option value="completed">Completed</option>
+        </select>-->
+        <br><br>
+
+        <input type="submit" value="Add Task">
+
+    </form>
+

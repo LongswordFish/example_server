@@ -1,0 +1,59 @@
+<h2>Task Dashboard</h2>
+ 
+ <section class="tasks-container">
+   
+
+     <form method="POST" action="/task/search">
+        <label>Search By</label>
+        <select name="task-search">
+                <option value="all">All tasks</option>
+                <option value="open">Open Tasks</option>
+                <option value="on-hold">On Hold Tasks</option>
+                <option value="closed">Closed Tasks</option>
+                <option value="pending">Pending Tasks</option>
+                <option value="low-priority">Low Priority</option>
+                <option value="medium-priority">Meidum Priority</option>
+                <option value="high-priority">High Priority</option>
+        </select>
+        <input type="submit" value="Search">
+     </form> <br><br>
+
+    <table border="1" style="text-align: center;">
+        <thead>
+                <th>Title</th>
+                <th>Priority</th>
+                <th>Status</th>
+                <th>Due Date</th>
+                <th>Operation</th>
+        </thead>
+        <tbody>
+           {{#each data}}
+                <tr>
+                   <td>
+                        <a href="/task/profile/{{this._id}}" class="task-title">{{this.title}}</a>
+                   </td>
+                   <td>
+                       <span>{{this.priority}}</span>
+                      
+                   </td>
+                   <td>
+                        <span>{{this.status}}</span>
+                   </td>
+                   <td>
+                       <span>{{this.dueDate}}</span>
+                   </td>
+                   <td>
+                        <a href="/task/edit/{{this._id}}" class="edit-delete-button">Edit</a>
+                        <a href="/task/delete/{{this._id}}?method=DELETE" class="edit-delete-button">Delete</a>
+                   </td> 
+                </tr>
+            {{/each}}
+    </tbody>
+    </table>
+ 
+</section>
+
+<div id="tasks-links-holder">
+    <a href="/task/add">Add a Task</a>
+</div>
+

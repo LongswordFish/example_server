@@ -1,0 +1,15 @@
+
+<h2>Login User</h2>
+<form action="/user/login" method="POST">
+    <label for="username">Email</label>
+    <input type="text" id="email" name="email"><br><br>
+    {{#if error_1}}
+    <p style="color:red;font-size:0.8em;">{{error_1}}</p>
+    {{/if}}
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password"> <br><br>
+    {{#if error_2}}
+    <p style="color:red;font-size:0.8em;">{{error_2}}</p>
+    {{/if}}
+    <input type="submit" value="Login">
+</form>

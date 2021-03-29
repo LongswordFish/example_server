@@ -1,0 +1,31 @@
+ <h2>Update Task</h2>
+    <form method="POST" action="/task/update/{{_id}}?method=PUT">
+
+        <label>Title</label>
+        <input type="text" name="title" id="title" value="{{title}}"> <br><br>
+
+        <label>Description</label>
+        <textarea id="description" name="description">{{description}}</textarea><br><br>
+
+        <label>Due Date</label>
+        <input type="date" name="dueDate" id="dueDate" value={{dueDate}}><br><br>
+
+        <label>Priority</label>
+        <select name="priority">
+            <option value="low" {{if_priority_low priority}}>Low</option>
+            <option value="medium" {{if_priority_medium priority}} >Medium</option>
+            <option value="high" {{if_priority_high priority}} >High</option>
+        </select>
+        <br><br>
+
+        <label>Status</label>
+        <select name="status">
+            <option value="open">Open</option>
+            <option value="hold">On Hold</option>
+            <option value="completed">Completed</option>
+        </select>
+        <br><br>
+
+        <input type="submit" value="Update Task">
+    </form>
+
