@@ -6,7 +6,7 @@ const fileUpload = require('express-fileupload');
 const session = require('express-session')
 
 //This loads all our environment variables from the keys.env
-require("dotenv").config({path:'./config/keys.env'});
+//require("dotenv").config({path:'./config/keys.env'});
 
 //import your router objects
 const userRoutes = require("./controllers/User");
